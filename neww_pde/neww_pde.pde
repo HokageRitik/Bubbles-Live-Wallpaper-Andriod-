@@ -92,7 +92,7 @@ for (bubble b:bubbles)
 { b.show();
 b.move();
 if(b.alpha<=0){
-bubbles.remove(i);
+b.remove();
 }
 }
 
