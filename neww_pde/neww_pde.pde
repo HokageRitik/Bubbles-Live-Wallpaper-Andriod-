@@ -37,9 +37,9 @@ void move(){
 
 x+= map(noise(xOff),0,1,-4,4);
 y+= map(noise(yOff),0,1,-4,4);
-xOff+=0.02;
-yOff+=0.02;
-alpha-= 1.5;
+xOff+=0.01;
+yOff+=0.01;
+alpha-= 0.5;
 }
 
 
@@ -71,14 +71,12 @@ B+=colorSpeed;
 bubble b;
 void setup(){
 size(displayWidth, displayHeight);
-back = color(r,g,B);
 background(0);
 bubbles = new ArrayList<bubble>();
 
 }
 void draw(){
   color backk = color(r,g,B);
-  
   background(backk);
   if(random(1)<0.02){
   createBub();
@@ -90,12 +88,11 @@ void draw(){
   }
   setBackground();
 
-for (int i=bubbles.size()-1 ;i>=0;i--)
-{  bubble b = bubbles.get(i);
-  b.show();
+for (bubble b:bubbles)
+{ b.show();
 b.move();
 if(b.alpha<=0){
-bubbles.remove(i);
+b.remove();
 }
 }
 
