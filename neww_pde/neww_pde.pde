@@ -15,7 +15,7 @@ float y;
 float r;
 float xOff;
 float yOff;
-float alpha=300;
+float alpha=255;
 color c = color(255,255,255,alpha);
 bubble(float x_,float y_,float r_)
 {
